@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "3cec31ab-c72f-4657-be55-f86acecb42d8",
+		"name": "Wallet-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37433440"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Health Check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 16:17:50 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"service\": \"wallet-service\",\n    \"status\": \"healthy\",\n    \"version\": \"1.0.0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jane Smith\",\r\n    \"email\": \"jane@example.com\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jane Smith\",\r\n    \"email\": \"jane@example.com\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 16:32:05 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "462"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n        \"name\": \"Jane Smith\",\n        \"email\": \"jane@example.com\",\n        \"wallet\": {\n            \"id\": \"5138b9ff-320c-4708-a778-222ab3ce2838\",\n            \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n            \"balance\": 0,\n            \"created_at\": \"2025-08-07T17:32:05.817+01:00\",\n            \"updated_at\": \"2025-08-07T17:32:05.817+01:00\",\n            \"user\": null\n        },\n        \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n        \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"77a515b6-7602-4d69-b469-99ca32157a18"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User By ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"77a515b6-7602-4d69-b469-99ca32157a18"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 16:35:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "464"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n        \"name\": \"Jane Smith\",\n        \"email\": \"jane@example.com\",\n        \"wallet\": {\n            \"id\": \"5138b9ff-320c-4708-a778-222ab3ce2838\",\n            \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n            \"balance\": 0,\n            \"created_at\": \"2025-08-07T17:32:05.817+01:00\",\n            \"updated_at\": \"2025-08-07T17:32:05.817+01:00\",\n            \"user\": null\n        },\n        \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n        \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Fund Wallet",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 10000,\r\n    \"reference\": \"fund_001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/fund",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"77a515b6-7602-4d69-b469-99ca32157a18",
+						"wallet",
+						"fund"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fund Wallet",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 10000,\r\n    \"reference\": \"fund_001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/fund",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"77a515b6-7602-4d69-b469-99ca32157a18",
+								"wallet",
+								"fund"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 16:37:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "761"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Wallet funded successfully\",\n    \"data\": {\n        \"id\": \"2ba77744-86ee-4da2-af8e-4078e6af38d2\",\n        \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n        \"type\": \"credit\",\n        \"amount\": 10000,\n        \"description\": \"Wallet funding\",\n        \"status\": \"completed\",\n        \"reference\": \"fund_001\",\n        \"created_at\": \"2025-08-07T17:37:44.614+01:00\",\n        \"updated_at\": \"2025-08-07T17:37:44.614+01:00\",\n        \"user\": {\n            \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n            \"name\": \"Jane Smith\",\n            \"email\": \"jane@example.com\",\n            \"wallet\": {\n                \"id\": \"5138b9ff-320c-4708-a778-222ab3ce2838\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"balance\": 0,\n                \"created_at\": \"2025-08-07T17:32:05.817+01:00\",\n                \"updated_at\": \"2025-08-07T17:32:05.817+01:00\",\n                \"user\": null\n            },\n            \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n            \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Withdraw Fund",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 1000,\r\n    \"reference\": \"withdraw_002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/withdraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"77a515b6-7602-4d69-b469-99ca32157a18",
+						"wallet",
+						"withdraw"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Withdraw",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"reference\": \"withdraw_002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"77a515b6-7602-4d69-b469-99ca32157a18",
+								"wallet",
+								"withdraw"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 17:19:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "771"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Funds withdrawn successfully\",\n    \"data\": {\n        \"id\": \"f58a06e9-f855-4e9b-bb84-6f4a38a7be4a\",\n        \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n        \"type\": \"debit\",\n        \"amount\": 1000,\n        \"description\": \"Wallet withdrawal\",\n        \"status\": \"completed\",\n        \"reference\": \"withdraw_002\",\n        \"created_at\": \"2025-08-07T18:19:11.862+01:00\",\n        \"updated_at\": \"2025-08-07T18:19:11.862+01:00\",\n        \"user\": {\n            \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n            \"name\": \"Jane Smith\",\n            \"email\": \"jane@example.com\",\n            \"wallet\": {\n                \"id\": \"5138b9ff-320c-4708-a778-222ab3ce2838\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"balance\": 8000,\n                \"created_at\": \"2025-08-07T17:32:05.817+01:00\",\n                \"updated_at\": \"2025-08-07T17:52:11.078+01:00\",\n                \"user\": null\n            },\n            \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n            \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transfer Funds",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"to_user_id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\r\n    \"amount\": 3000,\r\n    \"reference\": \"transfer_001\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"77a515b6-7602-4d69-b469-99ca32157a18",
+						"wallet",
+						"transfer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Transfer Funds",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to_user_id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\r\n    \"amount\": 3000,\r\n    \"reference\": \"transfer_001\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"77a515b6-7602-4d69-b469-99ca32157a18",
+								"wallet",
+								"transfer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 19:00:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1714"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Funds transferred successfully\",\n    \"data\": {\n        \"id\": \"455726a1-bbed-4d32-89f0-477aaaa3e003\",\n        \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n        \"type\": \"transfer\",\n        \"amount\": 3000,\n        \"description\": \"Transfer to dave Smith\",\n        \"status\": \"completed\",\n        \"reference\": \"transfer_001\",\n        \"from_user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n        \"to_user_id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\n        \"created_at\": \"2025-08-07T20:00:48.288+01:00\",\n        \"updated_at\": \"2025-08-07T20:00:48.288+01:00\",\n        \"user\": {\n            \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n            \"name\": \"Jane Smith\",\n            \"email\": \"jane@example.com\",\n            \"wallet\": {\n                \"id\": \"5138b9ff-320c-4708-a778-222ab3ce2838\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"balance\": 7000,\n                \"created_at\": \"2025-08-07T17:32:05.817+01:00\",\n                \"updated_at\": \"2025-08-07T18:19:11.868+01:00\",\n                \"user\": null\n            },\n            \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n            \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n        },\n        \"from_user\": {\n            \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n            \"name\": \"Jane Smith\",\n            \"email\": \"jane@example.com\",\n            \"wallet\": {\n                \"id\": \"5138b9ff-320c-4708-a778-222ab3ce2838\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"balance\": 7000,\n                \"created_at\": \"2025-08-07T17:32:05.817+01:00\",\n                \"updated_at\": \"2025-08-07T18:19:11.868+01:00\",\n                \"user\": null\n            },\n            \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n            \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n        },\n        \"to_user\": {\n            \"id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\n            \"name\": \"dave Smith\",\n            \"email\": \"dave@example.com\",\n            \"wallet\": {\n                \"id\": \"2dc2385f-e378-4c65-af85-decc305a4262\",\n                \"user_id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\n                \"balance\": 0,\n                \"created_at\": \"2025-08-07T19:57:12.372+01:00\",\n                \"updated_at\": \"2025-08-07T19:57:12.372+01:00\",\n                \"user\": null\n            },\n            \"created_at\": \"2025-08-07T19:57:12.364+01:00\",\n            \"updated_at\": \"2025-08-07T19:57:12.364+01:00\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transaction History",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"77a515b6-7602-4d69-b469-99ca32157a18",
+						"wallet",
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Transaction History",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/77a515b6-7602-4d69-b469-99ca32157a18/wallet/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"77a515b6-7602-4d69-b469-99ca32157a18",
+								"wallet",
+								"transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 19:01:58 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Transactions retrieved successfully\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"455726a1-bbed-4d32-89f0-477aaaa3e003\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"type\": \"transfer\",\n                \"amount\": 3000,\n                \"description\": \"Transfer to dave Smith\",\n                \"status\": \"completed\",\n                \"reference\": \"transfer_001\",\n                \"from_user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"to_user_id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\n                \"created_at\": \"2025-08-07T20:00:48.288+01:00\",\n                \"updated_at\": \"2025-08-07T20:00:48.288+01:00\",\n                \"user\": {\n                    \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                    \"name\": \"Jane Smith\",\n                    \"email\": \"jane@example.com\",\n                    \"wallet\": null,\n                    \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n                    \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n                },\n                \"from_user\": {\n                    \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                    \"name\": \"Jane Smith\",\n                    \"email\": \"jane@example.com\",\n                    \"wallet\": null,\n                    \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n                    \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n                },\n                \"to_user\": {\n                    \"id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\n                    \"name\": \"dave Smith\",\n                    \"email\": \"dave@example.com\",\n                    \"wallet\": null,\n                    \"created_at\": \"2025-08-07T19:57:12.364+01:00\",\n                    \"updated_at\": \"2025-08-07T19:57:12.364+01:00\"\n                }\n            },\n            {\n                \"id\": \"f58a06e9-f855-4e9b-bb84-6f4a38a7be4a\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"type\": \"debit\",\n                \"amount\": 1000,\n                \"description\": \"Wallet withdrawal\",\n                \"status\": \"completed\",\n                \"reference\": \"withdraw_002\",\n                \"created_at\": \"2025-08-07T18:19:11.862+01:00\",\n                \"updated_at\": \"2025-08-07T18:19:11.862+01:00\",\n                \"user\": {\n                    \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                    \"name\": \"Jane Smith\",\n                    \"email\": \"jane@example.com\",\n                    \"wallet\": null,\n                    \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n                    \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n                }\n            },\n            {\n                \"id\": \"719db27c-1059-4e95-93b8-568701f77049\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"type\": \"debit\",\n                \"amount\": 2000,\n                \"description\": \"Wallet withdrawal\",\n                \"status\": \"completed\",\n                \"reference\": \"withdraw_001\",\n                \"created_at\": \"2025-08-07T17:52:11.076+01:00\",\n                \"updated_at\": \"2025-08-07T17:52:11.076+01:00\",\n                \"user\": {\n                    \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                    \"name\": \"Jane Smith\",\n                    \"email\": \"jane@example.com\",\n                    \"wallet\": null,\n                    \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n                    \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n                }\n            },\n            {\n                \"id\": \"2ba77744-86ee-4da2-af8e-4078e6af38d2\",\n                \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                \"type\": \"credit\",\n                \"amount\": 10000,\n                \"description\": \"Wallet funding\",\n                \"status\": \"completed\",\n                \"reference\": \"fund_001\",\n                \"created_at\": \"2025-08-07T17:37:44.614+01:00\",\n                \"updated_at\": \"2025-08-07T17:37:44.614+01:00\",\n                \"user\": {\n                    \"id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n                    \"name\": \"Jane Smith\",\n                    \"email\": \"jane@example.com\",\n                    \"wallet\": null,\n                    \"created_at\": \"2025-08-07T17:32:05.815+01:00\",\n                    \"updated_at\": \"2025-08-07T17:32:05.815+01:00\"\n                }\n            }\n        ],\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total\": 4,\n        \"total_pages\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Run Reconciliation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/reconciliation/run",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"reconciliation",
+						"run"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Run Reconciliation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reconciliation/run",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reconciliation",
+								"run"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Aug 2025 19:04:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "443"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Reconciliation completed successfully\",\n    \"data\": [\n        {\n            \"user_id\": \"eb8f68c9-1d3d-4fec-a0d8-6dccb5798b62\",\n            \"stored_balance\": 3000,\n            \"calculated_balance\": 3000,\n            \"difference\": 0,\n            \"has_mismatch\": false,\n            \"checked_at\": \"2025-08-07T20:04:52.6986617+01:00\"\n        },\n        {\n            \"user_id\": \"77a515b6-7602-4d69-b469-99ca32157a18\",\n            \"stored_balance\": 4000,\n            \"calculated_balance\": 4000,\n            \"difference\": 0,\n            \"has_mismatch\": false,\n            \"checked_at\": \"2025-08-07T20:04:52.7057873+01:00\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
