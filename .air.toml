@@ -1,0 +1,24 @@
+# Root project
+root = "."
+
+# Air will run only in development mode
+[env]
+GO_ENV = "development"
+
+# Command to build the app 
+[build]
+cmd = "go build -o ./tmp/main.exe ./cmd/server"
+bin = "tmp/main.exe"
+full_bin = ""
+
+# Watch only relevant file types
+[include]
+extensions = ["go", "tpl", "tmpl", "html"]
+
+# Logging
+[log]
+time = true
+
+# Optional: Color settings
+[color]
+main = "yellow"
