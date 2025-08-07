@@ -35,7 +35,7 @@ wallet-service/
 │   │   └── config.go              # Configuration management
 │   ├── handlers/
 │   │   ├── handlers.go            # HTTP handlers
-│   │   └── router.go              # Route definitions
+│   │
 │   ├── usecases/
 │   │   └── usecases.go           # Business logic
 │   ├── repositories/
@@ -328,8 +328,6 @@ go test ./tests/unit/... -v
 ### Run Integration Tests
 
 ```bash
-# Create test database first
-mysql -u root -p -e "CREATE DATABASE wallet_service_test;"
 
 # Run integration tests
 go test ./tests/integration/... -v
